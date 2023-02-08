@@ -25,4 +25,37 @@ void print_triangle(int leftCol, int size)
     putchar('\n');
   }
 }
+// Prints an arrow 
+void print_arrow(int leftCol, int size )
+{
+  for(int row =0; row <= size; row++)
+    {
+      int minCol = leftCol + size - row;
+      int maxCol = leftCol + size + row;
 
+      int col;
+      for(col = 0; col < minCol; col++ )
+	putchar(' ');
+      for( ; col <= maxCol; col++)
+	putchar('*');
+      putchar('\n');
+    }
+
+  int i,j;
+  int endCol = leftCol + size;
+
+  int tempLeftCol = leftCol;
+
+  leftCol += leftCol -1;
+
+  for (int row; row < size; row++)
+    {
+      int col;
+      for(col = 0; col < leftCol; col++)
+	putchar(' ');
+      for( ; col < endCol + tempLeftCol -1; col++)
+	putchar('*');
+      putchar('\n');
+
+    }
+}
